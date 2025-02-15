@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro e Micronutrientes</title>
+    <style>
+        /* Reset básico */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilo geral */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f3f7f7;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #16a085, #1abc9c);
+            color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 5px 7px rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.4em;
+        }
+
+        /* Menu de navegação */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #138d75;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 20px 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #0e6251;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            border-bottom: 3px solid #16a085;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            color: #138d75;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        section p {
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.2em;
+        }
+
+        ul {
+            margin-top: 15px;
+            margin-left: 30px;
+            font-size: 1.1em;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+        }
+
+        /* Imagens */
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Botão interativo */
+        .button {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 15px;
+            text-align: center;
+            background: #16a085;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #138d75;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #0e6251;
+            color: #fff;
+            margin-top: 50px;
+            font-size: 1.1em;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                padding: 15px 20px;
+            }
+
+            .image-container img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Macro e Micronutrientes</h1>
+        <p>A chave para uma alimentação saudável e equilibrada!</p>
+    </header>
+
+    <!-- Menu de navegação -->
+    <nav>
+        <a href="#macronutrientes">Macronutrientes</a>
+        <a href="#micronutrientes">Micronutrientes</a>
+        <a href="#importancia">Importância</a>
+        <a href="#curiosidades">Curiosidades</a>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+
+        <!-- Seção de macronutrientes -->
+        <section id="macronutrientes">
+            <h2>🥩 Macronutrientes</h2>
+            <p>Os macronutrientes são nutrientes que o corpo necessita em grandes quantidades para produzir energia, manter funções vitais e construir tecidos. Eles incluem:</p>
+            <ul>
+                <li><strong>Carboidratos:</strong> Fonte primária de energia. Ex.: pães, massas, frutas e cereais integrais.</li>
+                <li><strong>Proteínas:</strong> Construção e reparação de músculos, produção de enzimas. Ex.: carnes, ovos, leite e leguminosas.</li>
+                <li><strong>Gorduras:</strong> Fornecem energia, auxiliam na produção hormonal. Ex.: azeite, abacate, nozes e salmão.</li>
+                <li><strong>Água:</strong> Essencial para todas as reações metabólicas e transporte de nutrientes.</li>
+            </ul>
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2017/06/06/22/24/salad-2371487_1280.jpg" alt="Macronutrientes - Alimentos saudáveis">
+            </div>
+        </section>
+
+        <!-- Seção de micronutrientes -->
+        <section id="micronutrientes">
+            <h2>🥦 Micronutrientes</h2>
+            <p>Os micronutrientes são necessários em menores quantidades, mas desempenham papéis essenciais no funcionamento celular e no metabolismo. Eles se dividem em:</p>
+            <ul>
+                <li><strong>Vitaminas:</strong> Regulam funções metabólicas, atuam no crescimento e na imunidade. Exemplos:</li>
+                <ul>
+                    <li>🟢 Vitamina A: visão e saúde da pele (cenoura, espinafre).</li>
+                    <li>🟠 Vitamina C: sistema imunológico (laranja, morango).</li>
+                    <li>🟡 Vitamina D: saúde óssea (exposição solar, peixes).</li>
+                </ul>
+                <li><strong>Minerais:</strong> Regulam processos celulares e estruturais. Exemplos:</li>
+                <ul>
+                    <li>🔴 Ferro: transporte de oxigênio (carnes, feijão).</li>
+                    <li>🔵 Cálcio: saúde óssea (leite, brócolis).</li>
+                    <li>🟣 Zinco: cicatrização e imunidade (castanhas, carnes).</li>
+                </ul>
+            </ul>
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2017/08/30/06/55/fruit-2691294_1280.jpg" alt="Micronutrientes - Frutas e vegetais">
+            </div>
+        </section>
+
+        <!-- Seção de importância -->
+        <section id="importancia">
+            <h2>⚖️ Importância dos Nutrientes</h2>
+            <p>O equilíbrio entre macro e micronutrientes garante o funcionamento correto do organismo, prevenindo doenças e promovendo saúde. Benefícios de uma alimentação balanceada:</p>
+            <ul>
+                <li>💪 Aumento da energia e desempenho físico.</li>
+                <li>🧠 Melhora da memória e concentração.</li>
+                <li>🛡️ Fortalecimento do sistema imunológico.</li>
+                <li>🦴 Manutenção de ossos e músculos saudáveis.</li>
+                <li>❤️ Redução do risco de doenças crônicas, como diabetes e hipertensão.</li>
+            </ul>
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2015/07/02/10/39/balanced-diet-828436_1280.jpg" alt="Importância da alimentação saudável">
+            </div>
+        </section>
+
+        <!-- Seção de curiosidades -->
+        <section id="curiosidades">
+            <h2>🧠 Curiosidades Nutricionais</h2>
+            <ul>
+                <li>🍫 O chocolate amargo (70% cacau ou mais) contém antioxidantes que beneficiam o coração.</li>
+                <li>🥑 O abacate é rico em gorduras saudáveis e contém mais potássio que a banana.</li>
+                <li>🌽 Milho é um dos alimentos mais consumidos no mundo, rico em carboidratos e fibras.</li>
+                <li>🧄 O alho tem propriedades antibacterianas e antivirais naturais.</li>
+                <li>🥗 Comer vegetais crus preserva mais nutrientes do que cozidos em altas temperaturas.</li>
+            </ul>
+            <div class="image-container">
+                <img src="https://cdn.pixabay.com/photo/2017/03/19/16/48/corn-2150164_1280.jpg" alt="Curiosidades sobre alimentos">
+            </div>
+        </section>
+
+        <!-- Botão interativo -->
+        <a href="#macronutrientes" class="button">🔝 Voltar ao topo</a>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        &copy; 2025 - Nutrientes Essenciais | Criado por Lincoln e Nikolas
+    </footer>
+
+</body>
+</html>
