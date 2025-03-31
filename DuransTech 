@@ -1,1 +1,147 @@
-Site criado para a assistência técnica mais top do Brasil 
+ <!DOCTYPE html><html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pedidos</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    .logo {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        color: #007bff;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+    }
+    form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        margin: auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        background: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background: #218838;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        background: white;
+        padding: 15px;
+        margin: 5px auto;
+        width: 350px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .pedido-buttons {
+        display: flex;
+        gap: 5px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="logo">DuransTech</div><h2>Cadastro de Pedido</h2>
+<form id="pedidoForm">
+    <label>Nome do Cliente:</label>
+    <input type="text" id="cliente" required><br>
+
+    <label>Fone:</label>
+    <input type="tel" id="fone" required><br>
+
+    <label>Data:</label>
+    <input type="date" id="data" required><br>
+
+    <label>Modelo:</label>
+    <input type="text" id="modelo" required><br>
+
+    <label>Reparo:</label>
+    <input type="text" id="reparo" required><br>
+
+    <label>Valor (R$):</label>
+    <input type="number" id="valor" required><br>
+    
+    <button type="button" onclick="salvarPedido()">Salvar</button>
+</form>
+
+<h3>Pedidos Cadastrados</h3>
+<ul id="listaPedidos"></ul>
+
+<script>
+    document.addEventListener("DOMContentLoaded", carregarPedidos);
+
+    function salvarPedido() {
+        let cliente = document.getElementById("cliente").value;
+        let fone = document.getElementById("fone").value;
+        let data = document.getElementById("data").value;
+        let modelo = document.getElementById("modelo").value;
+        let reparo = document.getElementById("reparo").value;
+        let valor = document.getElementById("valor").value;
+
+        if (!cliente || !fone || !data || !modelo || !reparo || !valor) {
+            alert("Preencha todos os campos!");
+            return;
+        }
+
+        let pedido = { cliente, fone, data, modelo, reparo, valor };
+        let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+        pedidos.push(pedido);
+        localStorage.setItem("pedidos", JSON.stringify(pedidos));
+
+        atualizarLista();
+        document.getElementById("pedidoForm").reset();
+    }
+
+    function carregarPedidos() {
+        atualizarLista();
+    }
+
+    function atualizarLista() {
+        let lista = document.getElementById("listaPedidos");
+        lista.innerHTML = "";
+        let pedidos = JSON.parse(localStorage.getItem("pedidos")) || [];
+
+        pedidos.forEach((pedido, index) => {
+            let item = document.createElement("li");
+            item.innerHTML = `<strong>Cliente:</strong> ${pedido.cliente} - <strong>Fone:</strong> ${pedido.fone} - <strong>Data:</strong> ${pedido.data} - <strong>Modelo:</strong> ${pedido.modelo} - <strong>Reparo:</strong> ${pedido.reparo} - <strong>Valor:</strong> R$ ${pedido.valor}`;
+            
+            let botaoExcluir = document.createElement("button");
+            botaoExcluir.textContent = "Excluir";
+            botaoExcluir.onclick = function() {
+                pedidos.splice(index, 1);
+                localStorage.setItem("pedidos", JSON.stringify(pedidos));
+                atualizarLista();
+            };
+            
+            item.appendChild(botaoExcluir);
+            lista.appendChild(item);
+        });
+    }
+</script>
+
+</body>
+</html>
